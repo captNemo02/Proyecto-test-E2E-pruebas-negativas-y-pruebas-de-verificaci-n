@@ -1,4 +1,4 @@
-import { test, expect, chromium } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { LoginPage } from '../../pages/login.page';
 import { usuarios } from '../../data/usuarios';
 import { InventarioPage } from '../../pages/inventario.page';

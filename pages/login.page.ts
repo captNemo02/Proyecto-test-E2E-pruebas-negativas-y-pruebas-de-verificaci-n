@@ -7,6 +7,8 @@ export class LoginPage {
     readonly passwordInput: Locator;
     readonly loginButton: Locator;
     readonly errorMessage: Locator;
+    readonly hamburguesa: Locator;
+    readonly logout: Locator;
 
     //desde el contrusctor inyectamos la dependencia de page:Page
     constructor(page: Page) {
@@ -15,6 +17,8 @@ export class LoginPage {
         this.passwordInput = page.locator('#password');
         this.loginButton = page.locator('#login-button');
         this.errorMessage = page.locator('h3[data-test="error"]');
+        this.hamburguesa = page.locator('#react-burger-menu-btn')
+        this.logout = page.locator('[data-test="logout-sidebar-link"]');
     }
     //metodo para cuando se necesite abrir una url
     async goto(url: string): Promise<void> {
@@ -25,6 +29,12 @@ export class LoginPage {
         await this.usernameInput.fill(username);
         await this.passwordInput.fill(password);
         await this.loginButton.click();
+    }
+
+    async cerrarSesion() {
+        await this.hamburguesa.click();
+        await this.logout.click();
+        await expect(this.page).toHaveURL('https://www.saucedemo.com/');
     }
 
     async alertaErrorVisible() {
