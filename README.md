@@ -1,58 +1,33 @@
-ESTRUCTURA DADA POR CHATGPT(SUJETO A CAMBIOS DEPENDIENDO COMO AVANZA PROYECTO)
+# Proyecto E2E Automation (Playwright + TypeScript) — Saucedemo
 
-project/
-├─ playwright.config.ts
-├─ package.json
-├─ package-lock.json
-├─ tsconfig.json
-├─ .gitignore
-├─ .env                      # opcional (si guardas URLs/credenciales)
-├─ README.md                 # cómo correr, cómo está organizado
+Automatización de pruebas End-to-End (E2E) en la web de práctica **https://www.saucedemo.com/**, enfocada en:
+- Pruebas de verificación (assertions)
+- Pruebas negativas (validaciones de error)
+- Buenas prácticas de automatización (Page Object Model + datos centralizados)
 
-├─ tests/                    # SOLO tests (archivos .spec.ts)
-│  ├─ e2e/
-│  │  ├─ purchase-flow.spec.ts
-│  │  └─ smoke.spec.ts
-│  ├─ auth/
-│  │  ├─ login.spec.ts
-│  │  └─ logout.spec.ts
-│  ├─ cart/
-│  │  ├─ add-remove-items.spec.ts
-│  │  └─ empty-cart.spec.ts
-│  ├─ checkout/
-│  │  ├─ form-validations.spec.ts
-│  │  └─ checkout-success.spec.ts
-│  └─ api/                   # opcional si también haces tests de API
-│     └─ auth-api.spec.ts
+> Este repositorio es principalmente de **práctica y aprendizaje**. Irá creciendo con más suites, mejor estructura y más escenarios.
 
-├─ pages/                    # Page Objects (NO .spec.ts, solo .ts)
-│  ├─ login.page.ts
-│  ├─ inventory.page.ts
-│  ├─ cart.page.ts
-│  ├─ checkout.page.ts
-│  └─ checkout-overview.page.ts
+---
 
-├─ fixtures/                 # “cosas reutilizables” para tests
-│  ├─ test-fixtures.ts        # si creas fixtures custom (opcional)
-│  └─ storage/               # estados guardados de login (opcional)
-│     └─ standard-user.json
+## Stack / Herramientas
 
-├─ data/                     # datos de prueba centralizados
-│  ├─ users.ts
-│  ├─ products.ts
-│  └─ checkout-data.ts
+- **Playwright Test** (E2E)
+- **TypeScript**
+- **Page Object Model (POM)**
+- Reporte HTML de Playwright
 
-├─ utils/                    # helpers genéricos (no de una página)
-│  ├─ selectors.ts           # opcional si centralizas selectores globales
-│  ├─ assertions.ts          # helpers de asserts comunes (opcional)
-│  ├─ random.ts              # generar datos (opcional)
-│  └─ logger.ts              # logging (opcional)
+---
 
-├─ constants/                # valores fijos (opcional)
-│  ├─ urls.ts
-│  └─ timeouts.ts
+## Objetivo del proyecto
 
-├─ reports/                  # si exportas cosas manualmente (opcional)
-│  └─ ...
+Practicar automatización E2E en un sitio real de prueba:
+- Automatizar flujos críticos (ej. login)
+- Crear pruebas positivas y negativas
+- Reforzar buenas prácticas: selectores estables, organización, reusabilidad y mantenibilidad
 
-└─ test-results/             # lo genera Playwright (no editar)
+---
+
+## Requisitos
+
+- Node.js (recomendado **v18+**)
+- npm
